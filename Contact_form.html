@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact_form</title>
+    <link rel="stylesheet" href="styles2.css">
+</head>
+
+<body>
+    <form id="form">
+        <div class="form">
+            <small>Enter message (optional) and click button "Send"</small>
+            <div class="wrapper centered">
+                <article class="letter">
+                    <div class="side">
+                        <h1>Your message</h1>
+                        <p>
+                            <textarea name="message" id="message" placeholder="Start here"></textarea>
+                        </p>
+                    </div>
+                    <div class="side">
+                        <p>
+                            <input type="text" placeholder="Your name" name="from_name" id="from_name">
+                        </p>
+                        <p>
+                            <input type="email" placeholder="Your email" name="email_id" id="email_id">
+                        </p>
+                        <p>
+                            <input type="submit" id="button" value="Send Email">
+                        </p>
+                    </div>
+                </article>
+                <div class="envelope front"></div>
+                <div class="envelope back"></div>
+            </div>
+            <p class="result-message centered">Thank you for your message</p>
+        </div>
+    </form>
+    <script src="main.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+    <script type="text/javascript">
+        emailjs.init('SvKgDzMm89Q8tMCPG')
+    </script>
+
+</body>
+
+</html>

@@ -1,3 +1,24 @@
+
+.container {
+    display: flex;
+    flex-direction: row;
+    /* Organiza las columnas horizontalmente */
+    margin: 50px 0px 50px 50px;
+    /* Margen superior de 50px, margen derecho de 0px, margen inferior de 50px, margen izquierdo de 50px */
+    height: calc(100vh - 50px);
+    /* Ajusta la altura del contenedor para que se ajuste a la altura del navegador menos el margen superior */
+    border-radius: 10px;
+    font-weight: 300;
+}
+
+/*columna izquierda*/
+.column {
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+    height: 100%;
+}
+
 body {
     font-family: "Roboto", sans-serif;
     background-color: #f0f0f0;
@@ -26,37 +47,12 @@ h3 {
     font-size: 20px;
 }
 
-.container {
-    display: flex;
-    flex-direction: row;
-    /* Organiza las columnas horizontalmente */
-    margin: 50px 0px 50px 50px;
-    /* Margen superior de 50px, margen derecho de 0px, margen inferior de 50px, margen izquierdo de 50px */
-    height: calc(100vh - 50px);
-    /* Ajusta la altura del contenedor para que se ajuste a la altura del navegador menos el margen superior */
-    border-radius: 10px;
-    font-weight: 300;
-}
-
-/*columna izquierda*/
-.column {
-    text-align: center;
-    /* Centra el texto dentro de las columnas */
-    padding: 20px;
-    /* Espacio interior en las columnas */
-    box-sizing: border-box;
-    /* Incluye el padding en el ancho total */
-    height: 100%;
-    /* Hace que las columnas ocupen el 100% de la altura del contenedor */
-}
 
 .one {
     background-color: #a09cb9;
-    /* Color de fondo específico para la columna uno */
     width: 20%;
-    /* Ancho del 20% del navegador */
     flex: 0 0 20%;
-    /* Establece el ancho fijo */
+    border-radius: 15px;
 }
 
 .one img {
@@ -75,34 +71,43 @@ h3 {
 
 .social-media .icon {
     list-style: none;
-    /* Elimina los puntos de la lista */
     padding: 0;
     /* Elimina el padding de la lista */
     margin: 0;
     /* Elimina el margen de la lista */
     display: flex;
-    /* Organiza los íconos en una fila */
-    gap: 1px;
-    /* Espacio entre los íconos */
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
 }
 
 .social-icon {
     text-decoration: none;
-    /* Elimina el subrayado de los enlaces */
+    justify-content: center;
+    align-items: center;
 }
 
-.icon {
+.cv {
     display: flex;
-    justify-content: space-between;
-    padding: 10px;
-    list-style: none;
-    margin: 0;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    /* Puedes ajustar esto según el tamaño del contenedor */
 }
 
 .cv a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-decoration: none;
     color: black;
 }
+
+.cv i {
+    margin-right: 8px;
+    /* Espacio entre el ícono y el texto, ajusta según tus preferencias */
+}
+
 
 .contact-info ul {
     list-style: none;
@@ -151,6 +156,7 @@ td {
     /* Alineación del texto */
     color: black;
     /* Color del texto en las celdas */
+    font-size: 11px;
 }
 
 td:first-child {
@@ -179,11 +185,9 @@ td:nth-child(2) {
 /*Columna centro*/
 .two {
     background-color: #9cb9ae;
-    /* Color de fondo específico para la columna dos */
     width: 70%;
-    /* Ancho del 70% del navegador */
     flex: 0 0 70%;
-    /* Establece el ancho fijo */
+    border-radius: 15px;
 }
 
 .about {
@@ -205,13 +209,21 @@ td:nth-child(2) {
 .what-i-do .service {
     width: 48%;
     margin-bottom: 20px;
+    background-color: #b99ca7;
+    
+}
+
+.service p {
+    text-align: justify;
+    /* Justifica el texto en los contenedores de servicio */
+    text-justify: inter-word;
+    padding: 0px 15px 0px 15px
 }
 
 .service h3 {
     margin-bottom: 5px;
 }
 
-/* Estilos generales para la columna tres */
 /* Estilos generales para la columna tres */
 .three {
     position: fixed;
@@ -220,14 +232,12 @@ td:nth-child(2) {
     /* Alinea la columna en la parte inferior */
     right: 10px;
     /* Alinea la columna en la parte derecha */
-    width: 60px;
+    width: 50px;
     /* Ajusta el ancho de la columna */
     height: auto;
     /* Ajusta la altura al contenido */
     background-color: #f0f0f0;
     /* Color de fondo de la columna */
-    border-radius: 0;
-    /* Elimina el redondeo en los bordes */
     overflow-y: auto;
     /* Permite el desplazamiento vertical */
     overflow-x: hidden;
@@ -235,9 +245,6 @@ td:nth-child(2) {
     z-index: 1000;
     /* Asegura que la columna esté por encima de otros elementos */
     padding: 10px;
-    /* Espacio interior */
-    box-shadow: none;
-    /* Elimina el efecto de sombra */
 }
 
 .theme {
@@ -270,6 +277,7 @@ td:nth-child(2) {
     flex-direction: column;
     text-align: center;
     align-items: center;
+    font-size: smaller;
 }
 
 .toggle-switch {
@@ -334,7 +342,7 @@ td:nth-child(2) {
 }
 
 .dynamic li {
-    background-color: #a09cb9;
+    background-color: #b5b99c;
     /* Color de fondo de los ítems */
     height: 50px;
     width: 50px;
@@ -351,9 +359,10 @@ td:nth-child(2) {
     color: black;
 }
 
-.profile {
+.youtube {
     background-color: #a09cb9;
     margin-bottom: 10px;
+    margin-top: 100px;
     display: flex;
     /* Usar flexbox para alinear el ícono y el texto */
     align-items: center;
@@ -366,6 +375,23 @@ td:nth-child(2) {
     height: 50px;
     cursor: pointer;
     color: black;
+}
+
+.youtube a {
+    text-decoration: none;
+}
+
+.youtube a {
+    text-decoration: none;
+    color: inherit; 
+}
+
+.youtube i {
+    color: black; 
+}
+
+.youtube a:active i, .youtube a:focus i {
+    color: #b99ca7; /* Cambia el color del ícono al hacer clic o recibir foco */
 }
 
 .text-sample {
@@ -385,6 +411,23 @@ td:nth-child(2) {
     color: black;
 }
 
+.text-sample a {
+    text-decoration: none;
+}
+
+.text-sample a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.text-sample i {
+    color: black; 
+}
+
+.text-sample a:active i, .text-sample a:focus i {
+    color: #b99ca7;
+}
+
 .web-sample {
     background-color: #a09cb9;
     margin-bottom: 10px;
@@ -400,6 +443,23 @@ td:nth-child(2) {
     height: 50px;
     cursor: pointer;
     color: black;
+}
+
+.web-sample a {
+    text-decoration: none;
+}
+
+.web-sample a {
+    text-decoration: none;
+    color: inherit; /* Hereda el color del contenedor */
+}
+
+.web-sample i {
+    color: black; /* Color del ícono por defecto */
+}
+
+.web-sample a:active i, .web-sample a:focus i {
+    color: #b99ca7; /* Cambia el color del ícono al hacer clic o recibir foco */
 }
 
 .contact {
@@ -418,13 +478,41 @@ td:nth-child(2) {
     color: black;
 }
 
+.contact a {
+    text-decoration: none;
+}
+.contact a {
+    text-decoration: none;
+    color: inherit; /* Hereda el color del contenedor */
+}
+
+.contact i {
+    color: black; 
+}
+
+.contact a:active i, .contact a:focus i {
+    color: #b99ca7; /* Cambia el color del ícono al hacer clic o recibir foco */
+}
+
 /* Ajustes para pantallas grandes */
 @media (min-width: 769px) {
-    
+    .what-i-do {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .what-i-do .service {
+        width: 48%;
+        margin-bottom: 20px;
+        background-color: #b99ca7;
+    }
 
     .three {
-        right: 10px; /* Reduce aún más el margen desde el borde derecho */
-        width: 60px; /* Mantiene el ancho fijo */
+        right: 10px;
+        /* Reduce aún más el margen desde el borde derecho */
+        width: 60px;
+        /* Mantiene el ancho fijo */
     }
 }
 
@@ -453,6 +541,15 @@ td:nth-child(2) {
         /* Hace que la columna dos esté en el centro */
     }
 
+    .what-i-do {
+        display: block; /* Cambia el contenedor a bloque para que los servicios se apilen verticalmente */
+    }
+
+    .what-i-do .service {
+        width: 100%; /* Hace que cada servicio ocupe el 100% del ancho disponible */
+        margin-bottom: 20px; /* Espacio entre los servicios */
+    }
+
     .three {
         right: 10px;
         /* Mantiene el margen derecho en pantallas pequeñas */
@@ -475,3 +572,9 @@ td:nth-child(2) {
         /* Ajusta el tamaño del icono para pantallas pequeñas */
     }
 }
+
+/*Paleta de colores
+#b5b99c (verde primario)
+#9cb9ae (verde secundario)
+#a09cb9 (morado)
+#b99ca7 (rosa) */
