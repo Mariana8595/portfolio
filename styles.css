@@ -1,3 +1,13 @@
+.light-theme {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.dark-theme {
+    background-color: #333333;
+    color: #ffffff;
+}
+
 
 .container {
     display: flex;
@@ -91,8 +101,15 @@ h3 {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100%;
-    /* Puedes ajustar esto según el tamaño del contenedor */
+    height: 100%; /* Puedes ajustar esto según el tamaño del contenedor */
+    margin-top: 20px;
+    background-color: #9cb9ae;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    color: black;
+    height: 35px;
 }
 
 .cv a {
@@ -170,18 +187,6 @@ td:nth-child(2) {
     /* Puedes ajustar el valor 40px según lo necesites para que la columna de datos se ajuste adecuadamente */
 }
 
-.cv {
-    margin-top: 20px;
-    background-color: #9cb9ae;
-    color: white;
-    border-radius: 5px;
-    cursor: pointer;
-    text-align: center;
-    color: black;
-    height: 35px;
-
-}
-
 /*Columna centro*/
 .two {
     background-color: #9cb9ae;
@@ -210,7 +215,7 @@ td:nth-child(2) {
     width: 48%;
     margin-bottom: 20px;
     background-color: #b99ca7;
-    
+
 }
 
 .service p {
@@ -236,8 +241,6 @@ td:nth-child(2) {
     /* Ajusta el ancho de la columna */
     height: auto;
     /* Ajusta la altura al contenido */
-    background-color: #f0f0f0;
-    /* Color de fondo de la columna */
     overflow-y: auto;
     /* Permite el desplazamiento vertical */
     overflow-x: hidden;
@@ -247,85 +250,58 @@ td:nth-child(2) {
     padding: 10px;
 }
 
-.theme {
-    background-color: #f0f0f0;
+.theme-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    margin-top: 100px;
 }
 
-#theme-toggle {
-    background-color: lightblue;
-    margin-bottom: 20px;
-    display: flex;
-    /* Usar flexbox para alinear el ícono y el texto */
-    align-items: center;
-    /* Alinear verticalmente el ícono y el texto */
-    gap: 10px;
-    /* Espacio entre el ícono y el texto */
-    border-radius: 5px;
-    border-color: lightblue;
-    cursor: pointer;
-    width: 36px;
-    height: 20px;
-    padding-left: 0px;
-}
-
-.toggle-container {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    align-items: center;
-    font-size: smaller;
-}
-
-.toggle-switch {
+.switch {
     position: relative;
-    width: 30px;
-    /* Reducido a 30px */
-    height: 20px;
-    /* Reducido a 20px */
-    background-color: #ccc;
-    border-radius: 10px;
-    /* Ajustado para que el botón sea circular */
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+    display: inline-block;
+    width: 30px; /* Ancho del interruptor */
+    height: 20px; /* Altura del interruptor */
+    margin-right: 10px; /* Espacio entre el interruptor y el texto */
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
 }
 
 .slider {
     position: absolute;
-    width: 16px;
-    /* Reducido a 16px */
-    height: 16px;
-    /* Reducido a 16px */
-    background-color: white;
-    border-radius: 50%;
-    transition: transform 0.3s ease;
-    transform: translateX(2px);
-    /* Ajustado para que el círculo se alinee correctamente */
-}
-
-.toggle-switch.on {
-    background-color: #4CAF50;
-    /* Verde */
-}
-
-.toggle-switch.off {
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     background-color: #ccc;
-    /* Gris */
+    transition: .4s;
+    border-radius: 20px; /* Bordes redondeados */
 }
 
-.toggle-switch.on .slider {
-    transform: translateX(12px);
-    /* Mueve el slider a la derecha */
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 16px; /* Altura del círculo del interruptor */
+    width: 16px; /* Ancho del círculo del interruptor */
+    border-radius: 50%;
+    left: 2px; /* Ajuste para centrar el círculo */
+    bottom: 2px; /* Ajuste para centrar el círculo */
+    background-color: white;
+    transition: .4s;
 }
 
-.toggle-switch.off .slider {
-    transform: translateX(2px);
-    /* Mueve el slider a la izquierda */
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:checked + .slider:before {
+    transform: translateX(10px); /* Ajuste para mover el círculo */
 }
 
 /* Estilos para los elementos dentro de la columna tres */
@@ -342,20 +318,15 @@ td:nth-child(2) {
 }
 
 .dynamic li {
-    background-color: #b5b99c;
-    /* Color de fondo de los ítems */
+    background-color: #9cb9ae; /* Color de fondo de los ítems */
     height: 50px;
-    width: 50px;
-    /* Ancho de los ítems */
-    margin-bottom: 10px;
-    /* Espacio entre ítems */
+    width: 50px; /* Ancho de los ítems */
+    margin-bottom: 10px; /* Espacio entre ítems */
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 0;
-    /* Elimina el redondeo en los ítems */
-    cursor: pointer;
-    /* Cambia el cursor al pasar sobre los ítems */
+    border-radius: 10px; /* Elimina el redondeo en los ítems */
+    cursor: pointer; /* Cambia el cursor al pasar sobre los ítems */
     color: black;
 }
 
@@ -383,15 +354,17 @@ td:nth-child(2) {
 
 .youtube a {
     text-decoration: none;
-    color: inherit; 
+    color: inherit;
 }
 
 .youtube i {
-    color: black; 
+    color: black;
 }
 
-.youtube a:active i, .youtube a:focus i {
-    color: #b99ca7; /* Cambia el color del ícono al hacer clic o recibir foco */
+.youtube a:active i,
+.youtube a:focus i {
+    color: #b99ca7;
+    /* Cambia el color del ícono al hacer clic o recibir foco */
 }
 
 .text-sample {
@@ -421,10 +394,11 @@ td:nth-child(2) {
 }
 
 .text-sample i {
-    color: black; 
+    color: black;
 }
 
-.text-sample a:active i, .text-sample a:focus i {
+.text-sample a:active i,
+.text-sample a:focus i {
     color: #b99ca7;
 }
 
@@ -451,15 +425,19 @@ td:nth-child(2) {
 
 .web-sample a {
     text-decoration: none;
-    color: inherit; /* Hereda el color del contenedor */
+    color: inherit;
+    /* Hereda el color del contenedor */
 }
 
 .web-sample i {
-    color: black; /* Color del ícono por defecto */
+    color: black;
+    /* Color del ícono por defecto */
 }
 
-.web-sample a:active i, .web-sample a:focus i {
-    color: #b99ca7; /* Cambia el color del ícono al hacer clic o recibir foco */
+.web-sample a:active i,
+.web-sample a:focus i {
+    color: #b99ca7;
+    /* Cambia el color del ícono al hacer clic o recibir foco */
 }
 
 .contact {
@@ -481,17 +459,21 @@ td:nth-child(2) {
 .contact a {
     text-decoration: none;
 }
+
 .contact a {
     text-decoration: none;
-    color: inherit; /* Hereda el color del contenedor */
+    color: inherit;
+    /* Hereda el color del contenedor */
 }
 
 .contact i {
-    color: black; 
+    color: black;
 }
 
-.contact a:active i, .contact a:focus i {
-    color: #b99ca7; /* Cambia el color del ícono al hacer clic o recibir foco */
+.contact a:active i,
+.contact a:focus i {
+    color: #b99ca7;
+    /* Cambia el color del ícono al hacer clic o recibir foco */
 }
 
 /* Ajustes para pantallas grandes */
@@ -542,12 +524,15 @@ td:nth-child(2) {
     }
 
     .what-i-do {
-        display: block; /* Cambia el contenedor a bloque para que los servicios se apilen verticalmente */
+        display: block;
+        /* Cambia el contenedor a bloque para que los servicios se apilen verticalmente */
     }
 
     .what-i-do .service {
-        width: 100%; /* Hace que cada servicio ocupe el 100% del ancho disponible */
-        margin-bottom: 20px; /* Espacio entre los servicios */
+        width: 100%;
+        /* Hace que cada servicio ocupe el 100% del ancho disponible */
+        margin-bottom: 20px;
+        /* Espacio entre los servicios */
     }
 
     .three {
@@ -560,7 +545,6 @@ td:nth-child(2) {
         height: auto;
         /* Ajusta la altura al contenido */
         border-radius: 0;
-        /* Elimina el redondeo en pantallas pequeñas */
     }
 
     .dynamic li {

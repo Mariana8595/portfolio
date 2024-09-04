@@ -1,20 +1,29 @@
-/*boton*/
 document.addEventListener('DOMContentLoaded', () => {
-    const toggleSwitch = document.getElementById('toggleSwitch');
-    
-    toggleSwitch.addEventListener('click', () => {
-        if (toggleSwitch.classList.contains('off')) {
-            toggleSwitch.classList.remove('off');
-            toggleSwitch.classList.add('on');
+    const themeToggle = document.getElementById('themeToggle');
+    const body = document.body;
+
+    // Cargar el tema preferido del localStorage
+    if (localStorage.getItem('theme') === 'dark') {
+        body.classList.add('dark-theme');
+        themeToggle.checked = true;
+    } else {
+        body.classList.add('light-theme');
+    }
+
+    // Cambiar el tema cuando se haga clic en el interruptor
+    themeToggle.addEventListener('change', () => {
+        if (themeToggle.checked) {
+            body.classList.remove('light-theme');
+            body.classList.add('dark-theme');
+            localStorage.setItem('theme', 'dark');
         } else {
-            toggleSwitch.classList.remove('on');
-            toggleSwitch.classList.add('off');
+            body.classList.remove('dark-theme');
+            body.classList.add('light-theme');
+            localStorage.setItem('theme', 'light');
         }
     });
+});
 
-    // Inicializar el estado
-    toggleSwitch.classList.add('off');
-})
 //mail js
 
 const btn = document.getElementById('button');
